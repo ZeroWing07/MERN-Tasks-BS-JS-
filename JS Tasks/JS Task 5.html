@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Javascript Task 5</title>
+    <style>
+        form {
+            display: flex;
+            flex-direction: column;
+            row-gap: 20px;
+        }
+        .form-row {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+        label {
+            flex: 1;
+        }
+        input, textarea {
+            flex: 2;
+            margin-left: 5px;
+        }
+        input.invalid, textarea.invalid {
+            border-color: red;
+            box-shadow: none;
+        }
+        input.invalid:focus, textarea.invalid:focus {
+            outline: none; 
+            box-shadow: 0 0 3px red;
+        }
+        .error-div {
+            flex: 1;
+            color: red;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body style="width: 50%;">
+    <div>
+        <form>
+            <div class="form-row">
+                <label>Name:</label>
+                <input type="text" required>
+                <div class="error-div" id="error-name"></div>
+            </div>
+            
+            <div class="form-row">
+                <label>Email:</label>
+                <input type="email" required>
+                <div class="error-div" id="error-email"></div>
+            </div>
+            
+            <div class="form-row">
+                <label>Website:</label>
+                <input type="url" required>
+                <div class="error-div" id="error-website"></div>
+            </div>
+            
+            <div class="form-row">
+                <label>Message:</label>
+                <textarea required></textarea>
+                <div class="error-div" id="error-message"></div>
+            </div>
+            
+            <button onclick="validate()" type="button" id="date-btn" style="width: 5rem;">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        function validate() {
+            var name = document.getElementById("error-name");
+            var email = document.getElementById("error-email");
+            var website = document.getElementById("error-website");
+            var message = document.getElementById("error-message");
+            if(name.previousElementSibling.value == ""){
+                name.innerHTML = "This field is required";
+                name.previousElementSibling.classList.add("invalid");
+            }
+            else{
+                name.innerHTML = "";
+                name.previousElementSibling.classList.remove("invalid");
+            }
+
+            if(email.previousElementSibling.value == "" ){
+                email.innerHTML = "A valid email address is required";
+                email.previousElementSibling.classList.add("invalid");
+            }
+            else{
+                email.innerHTML = ""; 
+                email.previousElementSibling.classList.remove("invalid");
+            }
+
+            if(website.previousElementSibling.value == "" ){
+                website.innerHTML = "A valid url is required";
+                website.previousElementSibling.classList.add("invalid");
+            }
+            else{
+                website.innerHTML = ""; 
+                website.previousElementSibling.classList.remove("invalid");
+            }
+
+            if(message.previousElementSibling.value == "" ){
+                message.innerHTML = "This field is required";
+                message.previousElementSibling.classList.add("invalid");
+            }
+            else{
+                message.innerHTML = ""; 
+                message.previousElementSibling.classList.remove("invalid");
+            }
+        }
+    </script>
+</body>
+</html>

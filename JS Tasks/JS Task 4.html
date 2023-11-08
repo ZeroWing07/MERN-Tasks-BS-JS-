@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Javascript Task 4</title>
+    </head>
+    <script>
+        function date() {
+            var result_div = document.getElementById("date-div");
+            var date = new Date();
+            const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+            result_div.innerHTML = date.getDate()+"/"+month[date.getMonth()]+"/"+date.getFullYear();
+        }
+
+        function time() {
+            var result_div = document.getElementById("time-div");
+            var date = new Date();
+            result_div.innerHTML = date.toString();
+        }
+    </script>
+<body style="width: 30%;">
+    <div >
+        <form style="display: flex; flex-direction: column;"> 
+                <button onclick="date()" type="button" id="date-btn" style="width: 5rem;">show date</button>
+                <div id="date-div"></div>
+                <button onclick="time()" type="button" id="date-btn" style="width: 5rem;">show date</button>
+                <div id="time-div"></div>
+        </form>
+       
+    </div>
+</body>
+</html>

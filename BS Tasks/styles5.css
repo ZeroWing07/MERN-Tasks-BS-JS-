@@ -1,0 +1,12 @@
+.form-control.is-invalid, .was-validated .form-control:invalid {
+    background-image: url(x.png);
+}
+
+label.invalid-form-element{
+    color: red;
+}
+
+.input-group-text.invalid-form-element {
+    background-color: pink;
+    color: rgb(124, 26, 26);
+}

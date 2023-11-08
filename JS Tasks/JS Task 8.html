@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Javascript Task 8</title>
+    <link rel="stylesheet" href="styles8.css">
+</head>
+
+<body>
+    <div>
+        <form>
+            <div class="form-row" style="align-self: center; color:blue">
+                <h1>Registration Form</h1>
+            </div>
+            <div class="form-row">
+                <label class="form-label">First Name</label>
+                <input type="text" required />
+                <div class="error-div" id="error-name"></div>
+            </div>
+
+            <div class="form-row">
+                <label class="form-label">Last Name</label>
+                <input type="text" required />
+                <div class="error-div"></div>
+            </div>
+
+            <div class="form-row">
+                <label class="form-label">Email</label>
+                <input type="email" required />
+                <div class="error-div"></div>
+            </div>
+
+            <div class="form-row">
+                <label class="form-label">Password</label>
+                <input type="password" id="pass" required />
+                <div class="error-div-password"></div>
+            </div>
+
+            <div class="form-row">
+                <label class="form-label">Re-enter Password</label>
+                <input type="password" id="repass" required />
+                <div class="error-div-password"></div>
+            </div>
+
+            <div class="form-row">
+                <label class="form-label">Gender</label>
+                <div class="radio-div" style="display: flex; flex-direction: column">
+                    <div>
+                        <input type="radio" id="gender-male" name="gender" required />
+                        <label for="gender-male">Male</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="gender-female" name="gender" required />
+                        <label for="gender-female">Female</label>
+                    </div>
+                </div>
+                <div class="error-div"></div>
+            </div>
+
+            <div class="form-row">
+                <label class="form-label">Age</label>
+                <input type="number" required />
+                <div class="error-div"></div>
+            </div>
+
+            <div class="form-row">
+                <label class="form-label">Phone Number</label>
+                <input type="tel" required />
+                <div class="error-div"></div>
+            </div>
+
+            <div class="form-row">
+                <label class="form-label">Address</label>
+                <textarea required></textarea>
+                <div class="error-div"></div>
+            </div>
+
+            <div class="form-row">
+                <label class="form-label">State</label>
+                <input type="text" required />
+                <div class="error-div"></div>
+            </div>
+
+            <div class="form-row">
+                <label class="form-label">Country</label>
+                <select>
+                    <option hidden value="none">Choose your country</option>
+                    <option value="india">India</option>
+                    <option value="usa">USA</option>
+                </select>
+                <div class="error-div"></div>
+            </div>
+
+             <div class="form-row">
+                <label class="form-label">Languages known</label>
+                <div class="radio-div" style="display: flex; flex-direction: row">
+                    <div>
+                        <input type="checkbox" id="lang-en" name="language" required />
+                        <label for="lang-en">English</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="lang-kan" name="language" required />
+                        <label for="lang-kan">Kannada</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="lang-hi" name="language" required />
+                        <label for="lang-hi">Hindi</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="lang-tel" name="language" required />
+                        <label for="lang-tel">Telugu</label>
+                    </div>
+                </div>
+                <div class="error-div"></div>
+            </div>
+            <div class="form-row" style="margin-left: 12%; display: block;">
+                <input type="checkbox" id="declare">
+                <label for="declare">
+                    I hereby declare all the given details are true
+                </label>
+            </div>
+            <div class="form-row" style="margin-left: 70%;">
+                Log in to <a href="#" style="margin-left: 5px; margin-right: 5px;">Ethnus</a> website
+            </div>
+            <div class="form-row" style="align-self: center;">
+                <button onclick="validate()" type="button" id="date-btn">
+                    Register
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function validate() {
+            var error_divs = document.getElementsByClassName("error-div");
+            for (error_div of error_divs) {
+                if (error_div.previousElementSibling.value == "") {
+                    error_div.innerHTML = "POOR";
+                    error_div.previousElementSibling.classList.add("invalid");
+                } else {
+                    error_div.innerHTML = "";
+                    error_div.previousElementSibling.classList.remove("invalid");
+                }
+            }
+            var password = document.getElementById("pass");
+            var repass = document.getElementById("repass");
+            if (password.value == "") {
+                console.log("empty");
+                password.nextElementSibling.innerHTML = "POOR";
+                password.classList.add("invalid");
+            } else {
+                password.nextElementSibling.innerHTML = "";
+                password.classList.remove("invalid");
+            }
+            if (repass.value != password.value || password.value=="") {
+                repass.nextElementSibling.innerHTML = "POOR OR MISMATCH";
+                repass.classList.add("invalid");
+            } else {
+                repass.nextElementSibling.innerHTML = "";
+                repass.classList.remove("invalid");
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    align-items: stretch;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+label,
+input#declare {
+    flex: 1;
+    text-align: right;
+}
+
+input,
+textarea {
+    flex: 3;
+    margin-left: 5px;
+}
+
+select {
+    flex: 3;
+    margin-left: 5px;
+    width: 30%;
+}
+
+.form-label {
+    font-weight: bold;
+}
+
+div.radio-div {
+    flex: 3;
+}
+
+input.invalid,
+textarea.invalid {
+    border-color: red;
+    box-shadow: none;
+}
+
+input.invalid:focus,
+textarea.invalid:focus {
+    outline: none;
+    box-shadow: 0 0 3px red;
+}
+
+.error-div,
+.error-div-password {
+    flex: 1;
+    color: red;
+    margin-left: 5px;
+}
+
+button {
+    font-weight: 600;
+    letter-spacing: 1px;
+    background-color: red;
+    border-radius: 20px;
+    color: white;
+    text-align: center;
+    padding: 5px 10px 5px 10px;
+}
+
+body {
+    background: rgb(232, 226, 122);
+    background: radial-gradient(at center 10%,
+            rgba(232, 226, 122, 1) 0%,
+            rgba(189, 86, 180, 1) 100%);
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+html {
+    height: 100%;
+}

@@ -1,0 +1,35 @@
+a.text-white:hover {
+    color: yellow;
+}
+
+.carousel-item {
+    height: calc(100vh - 151px); 
+    overflow: hidden;
+}
+
+.carousel-item img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    filter: brightness(50%);
+}
+
+.overlay > h1 {
+    font-weight: 700;
+    font-size: 3rem;
+    letter-spacing: 3px;
+}
+
+.overlay > h3 {
+    font-weight: 400;
+}
+
+.overlay {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%) ;
+    z-index: 12;
+    text-align: center;
+    color: white;
+}

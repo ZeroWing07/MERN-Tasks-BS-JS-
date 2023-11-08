@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Javascript Task 7</title>
+    <style>
+        img {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <img src="train.png" id="animate">
+    <div style="margin-top: 250px; display: flex; flex-direction: column; justify-content: center;">
+        <h1 style="text-align: center; color: blue;">Click the following buttons to handle animation</h1>
+        <div style="display: flex; flex-direction: row; justify-content: center;">
+            <form>
+                <input type="button" onclick="startAnim()" value="start">
+                <input type="button" onclick="stopAnim()" value="stop">
+            </form>
+            
+        </div>
+    </div>
+    <script>
+        var moving = false;
+        let id=null;
+        const elem=document.getElementById("animate");
+        var end_x = window.innerWidth;
+        elem.onload = function() {
+            console.log(end_x);
+            end_x -= elem.naturalWidth;
+            console.log(end_x);
+        }
+        let pos=0;
+        function startAnim() {
+            if(moving==false){
+                if(pos==end_x){
+                    pos=0;
+                }
+                id=setInterval(frame, 5);
+                moving = true;
+            }
+            function frame() {
+                console.log(typeof elem);
+                if (pos==end_x) {
+                    clearInterval(id);
+                    moving=false;
+                }
+                else {
+                    pos++;
+                    elem.style.left=pos+'px';
+                }
+            }
+        }
+        function stopAnim() {
+            if(moving==true){
+                clearInterval(id);
+                moving = false;
+
+            }
+        }
+    </script>
+</html>

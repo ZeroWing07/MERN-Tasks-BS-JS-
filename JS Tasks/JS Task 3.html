@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Javascript Task 3</title>
+    </head>
+    <script>
+        function multiply() {
+            console.log("multiply");
+            var num1 = document.getElementById("num-1");
+            var num2 = document.getElementById("num-2");
+            var result = num1.value * num2.value;
+            var result_div = document.querySelector('.result');
+            result_div.innerHTML = result;
+        }
+
+        function divide() {
+            console.log("multiply");
+            var num1 = document.getElementById("num-1");
+            var num2 = document.getElementById("num-2");
+            var result = num1.value / num2.value;
+            var result_div = document.querySelector('.result');
+            result_div.innerHTML = result;
+        }
+    </script>
+<body style="width: 30%;">
+    <div >
+        <form style="display: flex; flex-direction: column;"> 
+            <div style="display: flex; flex-direction: row;">
+                Enter 1st Number : 
+                <input type="number" id="num-1">
+            </div>
+            <div style="display: flex; flex-direction: row;">
+                Enter 2nd Number : 
+                <input type="number" id="num-2">
+            </div>
+            <div style="display: flex; flex-direction: row;">
+                <button onclick="multiply()" type="button" id="mul-btn">Multiply</button>
+                <button onclick="divide()" type="button" id="div-btn">Divide</button>
+            </div>
+        </form>
+        <div style="display: flex; flex-direction: row; margin-top: 10px;">
+            <div style="margin-right: 10px;">The result is: </div>
+            <div class="result"></div>
+        </div>
+       
+    </div>
+</body>
+</html>
